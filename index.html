@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lottery Simulator</title>
+<link rel="stylesheet" href="styles/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+</head>
+<body>
+<main>
+    <section class="content">
+        <h1>Lottery Simulator</h1>
+        <p>Want to play the lottery? Use this instead&mdash;it's cheaper.</p>
+        <p>Pick five <em>different</em> numbers in the first five fields (ranging from 1-69, no repeats!), and one other number (1-26) in the red field. If you mess up your ticket, that's not our problem&mdash;you lose.</p>
+    </section>
+    <div ng-app="lotteryApp" ng-controller="lotteryController">
+        <div class="columns">
+            <div class="column">
+                <p><b>Your winnings</b>: {{ winnings | currency }}</p>
+            </div><!-- / .column -->
+            <div class="column">
+                <p><b>The pot</b>: {{ pot | currency }}</p>
+            </div><!-- / .column -->
+        </div><!-- / .columns -->
+        <form name="lotteryForm">
+            <div class="columns">
+                <div class="column">
+                    <p><b>Enter your picks</b></p>
+                    <input type="number" min="1" max="69" required name="yourNumber1" ng-model="yourNumber1" placeholder="1-69">
+                    <span ng-show="lotteryForm.yourNumber1.$touched && lotteryForm.yourNumber1.$invalid">Pick a number!</span>
+                    <input type="number" min="1" max="69" required name="yourNumber2" ng-model="yourNumber2" placeholder="1-69">
+                    <span ng-show="lotteryForm.yourNumber2.$touched && lotteryForm.yourNumber2.$invalid">Pick a number!</span>
+                    <input type="number" min="1" max="69" required name="yourNumber3" ng-model="yourNumber3" placeholder="1-69">
+                    <span ng-show="lotteryForm.yourNumber3.$touched && lotteryForm.yourNumber3.$invalid">Pick a number!</span>
+                    <input type="number" min="1" max="69" required name="yourNumber4" ng-model="yourNumber4" placeholder="1-69">
+                    <span ng-show="lotteryForm.yourNumber4.$touched && lotteryForm.yourNumber4.$invalid">Pick a number!</span>
+                    <input type="number" min="1" max="69" required name="yourNumber5" ng-model="yourNumber5" placeholder="1-69">
+                    <span ng-show="lotteryForm.yourNumber5.$touched && lotteryForm.yourNumber5.$invalid">Pick a number!</span>
+                    <input class="powerball" type="number" min="1" max="26" required name="yourNumber6" ng-model="yourNumber6" placeholder="1-26">
+                    <span ng-show="lotteryForm.yourNumber6.$touched && lotteryForm.yourNumber6.$invalid">Pick a number!</span>
+                </div><!-- / .column -->
+                <div class="column">
+                    <p><b>Winning numbers</b></p>
+                    <input type="number" disabled ng-model="winningNumber1">
+                    <input type="number" disabled ng-model="winningNumber2">
+                    <input type="number" disabled ng-model="winningNumber3">
+                    <input type="number" disabled ng-model="winningNumber4">
+                    <input type="number" disabled ng-model="winningNumber5">
+                    <input class="powerball" type="number" disabled ng-model="winningNumber6">
+                </div><!-- / .column -->
+            </div><!-- / .columns -->
+            <div class="columns">
+                <div class="column">
+                    <button type="submit" ng-click="play()">Play!</button>
+                </div><!-- / .column -->
+                <div class="column">
+                    <span class="verdict">{{ verdict }}</span>
+                </div><!-- / .column -->
+            </div><!-- / .columns -->
+        </form>
+    </div><!-- / ng-app -->
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="scripts/lotteryApp.js"></script>
+<script src="scripts/lotteryController.js"></script>
+</body>
+</html>

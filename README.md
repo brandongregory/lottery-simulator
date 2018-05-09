@@ -1,0 +1,1 @@
+Just a little Angular app I made in case you want to play the lottery, but don't want to lose money!

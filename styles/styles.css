@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Raleway, sans-serif;
+    font-size: 1.125em;
+    margin: 0;
+}
+main {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 15px;
+}
+.content {
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+}
+input[type="number"] {
+    display: block;
+    margin: .75rem auto;
+    min-width: 100px;
+    padding: 7px;
+}
+input[type="number"] + span {
+    color: #C30;
+    font-size: 12px;
+}
+.powerball {
+    background-color: #FCC;
+}
+button[type="submit"] {
+    background-color: #C30;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    min-width: 100px;
+    padding: 7px;
+}
+.verdict {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .columns {
+        display: grid;
+        grid-column-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .column {
+        text-align: center;
+    }
+}

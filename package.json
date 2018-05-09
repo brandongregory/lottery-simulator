@@ -1,0 +1,10 @@
+{
+  "name": "lottery-simulator",
+  "version": "1.0.0",
+  "description": "Want to play the lottery? Use this instead. It's cheaper.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Brandon Gregory <brandon.gregory.1981@gmail.com>",
+  "dependencies": {
+  }
+}
